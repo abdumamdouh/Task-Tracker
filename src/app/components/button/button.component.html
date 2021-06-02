@@ -1,0 +1,10 @@
+<!-- string interpolation for text property that we've recived as an input to this component from the parent component -->
+<!-- and we set the inline style by ngStyle directive using the property value which is an input to the component -->
+
+<button
+  class="btn"
+  (click)="onClick()"
+  [ngStyle]="{ 'background-color': color }"
+>
+  {{ text }}
+</button>
