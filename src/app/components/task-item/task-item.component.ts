@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Task } from '../../models/Task';
+import { faTimes } from '@fortawesome/free-solid-svg-icons';
 
 @Component({
   selector: 'app-task-item',
@@ -12,7 +13,14 @@ export class TaskItemComponent implements OnInit {
     day: 'May 6th at 1:30pm',
     reminder: true,
   };
+
+  faTimes = faTimes;
+
   constructor() {}
 
   ngOnInit(): void {}
+
+  onDelete(task: Task): void {
+    console.log(task);
+  }
 }
