@@ -1,4 +1,10 @@
-<div class="task">
+<!-- [ngClass] takes an object with key value, the key is the class, the value is boolean if it's true then the class will be added -->
+
+<div
+  class="task"
+  [ngClass]="{ reminder: task.reminder }"
+  (dblclick)="onToggle(task)"
+>
   <h3>
     {{ task.text }}
     <fa-icon
