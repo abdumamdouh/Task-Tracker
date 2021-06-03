@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { UiService } from '../../services/ui.service';
 import { Subscription } from 'rxjs';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -12,7 +13,7 @@ export class HeaderComponent implements OnInit {
   showAddTask: boolean = false;
   subscription: Subscription = new Subscription();
 
-  constructor(private uiService: UiService) {
+  constructor(private uiService: UiService, private router: Router) {
     // we want to catch this change using Subsciption
     this.subscription = this.uiService
       .onToggle()
@@ -23,5 +24,9 @@ export class HeaderComponent implements OnInit {
 
   toggleAddTask(): void {
     this.uiService.toggleAddTask();
+  }
+
+  hasRoute(route: string) {
+    return this.router.url === route;
   }
 }
