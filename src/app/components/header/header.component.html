@@ -8,8 +8,8 @@ el event dah enta elly 3amlo w 3amelttlo eventemmit
 <header>
   <h1>{{ title }}</h1>
   <app-button
-    color="green"
-    text="Add"
+    color="{{ showAddTask ? 'red' : 'green' }}"
+    text="{{ showAddTask ? 'Close' : 'Add' }}"
     (btnClick)="toggleAddTask()"
   ></app-button>
 </header>
